@@ -24,9 +24,10 @@ function init() {
 					let e = document.createTextNode(", ");
 					document.getElementById("modvers").appendChild(e);					
 				}
-				let e = document.createElement("a");
-				e.href = "https://minecraft.gamepedia.com/" + mod.versions[i];
-				e.innerText = mod.versions[i];
+				//let e = document.createElement("a");
+				//e.href = "https://minecraft.gamepedia.com/" + mod.versions[i];
+				//e.innerText = mod.versions[i];
+				let e = document.createTextNode(mod.versions[i]);
 				document.getElementById("modvers").appendChild(e);
 			}
 			if (!mod.apis || mod.apis.length === 0) {
