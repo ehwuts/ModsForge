@@ -74,5 +74,33 @@ var mods = {
 			"fabric",
 			"forge"
 		]
+	},
+	"uniquecrops": {
+		"name": "Unique Crops",
+		"description": "This mod adds 33 new crops, all unique to each other, and several new items related to them. While the crops themselves are documented in the in-game guide book well enough, the items and gear/tools that are included in this mod are left up to the user to find out what they can do. There may even be completely undocumented easter eggs, with no real indication of how to get them. (Or you could look at the source code, if you wish to have spoilers :] )",
+		"versions": [
+			"1.12",
+			"1.10.2",
+			"1.11.2",
+		],
+		"apis": [
+			"forge"
+		],
+		"upstream": "https://www.curseforge.com/minecraft/mc-mods/unique-crops"
+	},
+	"realfilingcabinet": {
+		"name": "Real Filing Cabinet",
+		"description": "Ever wanted more space to store all your cobble and quarried blocks? Then this mod is the one for you!",
+		"versions": [
+			"1.12",
+			"1.10.2",
+			"1.11.2",
+			"1.14-snapshot"
+		],
+		"apis": [
+			"forge",
+			"fabric"
+		],
+		"upstream": "https://github.com/bafomdad/realfilingcabinet/releases"
 	}
 };
