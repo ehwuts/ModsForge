@@ -9,3 +9,6 @@ body { margin: 0px; padding: 0px; }
 .mod:nth-child(even) { background-color: grey; }
 .mod { display: table-row; }
 .mod div { display: table-cell; padding: 2px;}
+
+#modviewer { margin-left: 3px; }
+#modviewer div { margin: 5px; }

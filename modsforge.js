@@ -92,7 +92,7 @@ function init() {
 			
 			let name = document.createElement("div");
 			let namehref = document.createElement("a");
-			namehref.href = "modsview.html?m=" + k[i];
+			namehref.href = "modsforgeview.html?m=" + k[i];
 			namehref.innerText = mods[k[i]].name;
 			if (namehref.innerText.length > limits.name) {
 				namehref.innerText = namehref.innerText.substring(0, limits.name - 3) + "...";
