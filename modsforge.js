@@ -19,14 +19,14 @@ function tryFilter() {
 			} else {
 				if (newsubsearch === "all" || newsubsearch === "apis") {
 					for (let j = 0; j < mods[k[i]].apis.length; j++) {
-						if (mods[k[i]].apis[j] === newsearch) {
+						if (mods[k[i]].apis[j].indexOf(newsearch) !== -1) {
 							matched = true;
 						}
 					}
 				}
 				if (newsubsearch === "all" || newsubsearch === "versions") {
 					for (let j = 0; j < mods[k[i]].versions.length; j++) {
-						if (mods[k[i]].versions[j] === newsearch) {
+						if (mods[k[i]].versions[j].indexOf(newsearch) !== -1) {
 							matched = true;
 						}
 					}
