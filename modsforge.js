@@ -1,3 +1,72 @@
+var filterstring = "";
+var filtertype = "all";
+
+function tryFilter() {
+	let newsearch = document.getElementById("search").value;
+	let newsubsearch = document.getElementById("subsearch").value;
+	
+	if (newsearch !== filterstring || (newsubsearch !== filtertype && newsearch !== "")) {
+		let k = Object.keys(mods);
+		for (let i = 0; i < k.length; i++) {
+			let matched = false;
+			if (newsearch === "") {
+				matched = true;
+			} else {
+				if (newsubsearch === "all" || newsubsearch === "apis") {
+					for (let j = 0; j < mods[k[i]].apis.length; j++) {
+						if (mods[k[i]].apis[j] === newsearch) {
+							matched = true;
+						}
+					}
+				}
+				if (newsubsearch === "all" || newsubsearch === "versions") {
+					for (let j = 0; j < mods[k[i]].versions.length; j++) {
+						if (mods[k[i]].versions[j] === newsearch) {
+							matched = true;
+						}
+					}
+				}
+				if (newsubsearch === "all" || newsubsearch === "description") {
+					let desc = mods[k[i]].description.toLowerCase();
+					let keywords = newsearch.toLowerCase().split(" ");
+					let failed = false;
+					for (let j = 0; j < keywords.length; j++) {
+						if (desc.indexOf(keywords[j]) === -1) {
+							failed = true;
+							break;
+						}
+					}
+					if (failed === false) {
+						matched = true;
+					}
+				}
+				if (newsubsearch === "all" || newsubsearch === "name") {
+					let desc = mods[k[i]].name.toLowerCase();
+					let keywords = newsearch.toLowerCase().split(" ");
+					let failed = false;
+					for (let j = 0; j < keywords.length; j++) {
+						if (desc.indexOf(keywords[j]) === -1) {
+							failed = true;
+							break;
+						}
+					}
+					if (failed === false) {
+						matched = true;
+					}
+				}
+			}
+			
+			if (matched) {
+				document.getElementById(k[i]).classList.remove("hidden");
+			} else {
+				document.getElementById(k[i]).classList.add("hidden");
+			}
+		}
+	}
+	
+	filterstring = newsearch;
+	filtertype = newsubsearch;
+}
 
 function init() {
 	if (typeof mods === "undefined") {
@@ -49,6 +118,11 @@ function init() {
 			
 			listings.appendChild(row);
 		}
+		
+		document.getElementById("search").onchange = tryFilter;
+		document.getElementById("search").onkeyup = tryFilter;
+		document.getElementById("subsearch").onchange = tryFilter;
+		document.getElementById("subsearch").onkeyup = tryFilter;
 	}
 }
 

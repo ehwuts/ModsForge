@@ -9,16 +9,16 @@
 <body>
 <img id="banner" src="modsforgereduced.png" alt="ModsForge!"><br>
 <div id="controls">
-<label>Search <input type="text" name="Search"></label>
-<label> by<select name="subsearch"><option id="all">All</option><option id="name">Name</option><option id="desc">Description</option><option id="versions">Versions</option><option id="apis">Apis</option></select></label>
+<label>Search <input type="text" id="search" name="search"></label>
+<label> by<select id="subsearch" name="subsearch"><option value="all">All</option><option value="name">Name</option><option value="desc">Description</option><option value="versions">Versions</option><option value="apis">Apis</option></select></label>
 </div>
 <div id="listingwrap">
 	<div id="listingsheader">
 		<div id="listingsheaderrow">
-			<div>Name</div>
-			<div>Description</div>
-			<div>Versions</div>
-			<div>Apis</div>
+			<div class="sortable">Name <span></span></div>
+			<div class="sortable">Description <span></span></div>
+			<div class="sortable">Version(s) <span></span></div>
+			<div class="sortable">Api(s) <span></span></div>
 		</div>
 	</div>
 	<div id="listings"></div>
