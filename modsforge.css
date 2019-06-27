@@ -1,5 +1,6 @@
 body { margin: 0px; padding: 0px; }
-#listingwrap { display: table; border: 2px solid black; }
+#controls { margin-left: 3px; margin-bottom: 3px; }
+#listingwrap { display: table; border: 2px solid black; margin-left: 3px; }
 #listingsheader { display: table-header-group; font-weight: bold; }
 #listingsheaderrow { display: table-row; }
 #listingsheaderrow div  { display: table-cell; border-bottom: 2px solid black; } 

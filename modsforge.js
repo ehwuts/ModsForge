@@ -17,10 +17,13 @@ function init() {
 			row.className = "mod";
 			
 			let name = document.createElement("div");
-			name.innerText = mods[k[i]].name;
-			if (name.innerText.length > limits.name) {
-				name.innerText = name.innerText.substring(0, limits.name - 3) + "...";
+			let namehref = document.createElement("a");
+			namehref.href = "modsview.html?m=" + k[i];
+			namehref.innerText = mods[k[i]].name;
+			if (namehref.innerText.length > limits.name) {
+				namehref.innerText = namehref.innerText.substring(0, limits.name - 3) + "...";
 			}
+			name.appendChild(namehref);
 			row.appendChild(name);
 			
 			let description = document.createElement("div");
