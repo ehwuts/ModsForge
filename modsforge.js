@@ -1,6 +1,11 @@
 var filterstring = "";
 var filtertype = "all";
 
+function trySort(e) {
+	let column = e.target;
+	//alert(e.target.innerText);
+}
+
 function tryFilter() {
 	let newsearch = document.getElementById("search").value;
 	let newsubsearch = document.getElementById("subsearch").value;
@@ -123,6 +128,11 @@ function init() {
 		document.getElementById("search").onkeyup = tryFilter;
 		document.getElementById("subsearch").onchange = tryFilter;
 		document.getElementById("subsearch").onkeyup = tryFilter;
+		
+		let columns = document.getElementsByClassName("sortable");
+		for (let i = 0; i < columns.length; i++) {
+			columns[i].onclick = trySort;
+		}
 	}
 }
 
