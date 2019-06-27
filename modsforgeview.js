@@ -38,7 +38,7 @@ function init() {
 				}
 				if (known_apis[mod.apis[i]]) {
 					let e = document.createElement("a");
-					e.href = "https://minecraft.gamepedia.com/" + mod.apis[i];
+					e.href = known_apis[mod.apis[i]];
 					e.innerText = mod.apis[i];
 					document.getElementById("modapis").appendChild(e);					
 				} else {
